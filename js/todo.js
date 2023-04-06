@@ -2,10 +2,12 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
 
+const TODOS_KEY = "toDos";
+
 const toDos = [];
 
 function saveToDos() {
-    localStorage.setItem("toDos", JSON.stringify(toDos));
+    localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
 function deleteToDo(Event) {
@@ -35,3 +37,17 @@ function handleToDoSumbit(Event) {
 }
 
 toDoForm.addEventListener("submit", handleToDoSumbit);
+
+function sayhello(item) {
+    console.log("dsadsa", item);
+}
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+if(savedToDos !== null) {
+    const parsedToDos = JSON.parse(savedToDos);
+    console.log(parsedToDos);
+    parsedToDos.forEach(sayhello);
+} 
+/* parsedToDos.forEach((item) => console.log("dsadsa", item));
+forEach= function을 사용하지 않아도 대신해서 짧게 사용할 수 있다.*/
