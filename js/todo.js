@@ -4,7 +4,7 @@ const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "toDos";
 
-const toDos = [];
+let toDos = [];
 
 function saveToDos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
@@ -46,8 +46,6 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if(savedToDos !== null) {
     const parsedToDos = JSON.parse(savedToDos);
-    console.log(parsedToDos);
-    parsedToDos.forEach(sayhello);
+    toDos = parsedToDos;
+    parsedToDos.forEach(paintToDo);
 } 
-/* parsedToDos.forEach((item) => console.log("dsadsa", item));
-forEach= function을 사용하지 않아도 대신해서 짧게 사용할 수 있다.*/
