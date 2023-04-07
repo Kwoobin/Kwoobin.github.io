@@ -13,6 +13,8 @@ function saveToDos() {
 function deleteToDo(Event) {
     const li = Event.target.parentElement;
     li.remove();
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+    saveToDos();
 }
 
 function paintToDo(newTodo) {
@@ -54,10 +56,3 @@ if(savedToDos !== null) {
     toDos = parsedToDos;
     parsedToDos.forEach(paintToDo);
 } 
-
-/* .filter = 값이 ture면 반환하고 false면 반환하지 않는다.
-const aaa = [{text:"rladnqls"}, {text:"dnqls"}];
-function dsadsa(asd) {
-    return asd.text !== "dnqls"
-}
-aaa.filter(dsadsa);*/
