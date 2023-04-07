@@ -54,3 +54,10 @@ if(savedToDos !== null) {
     toDos = parsedToDos;
     parsedToDos.forEach(paintToDo);
 } 
+
+/* .filter = 값이 ture면 반환하고 false면 반환하지 않는다.
+const aaa = [{text:"rladnqls"}, {text:"dnqls"}];
+function dsadsa(asd) {
+    return asd.text !== "dnqls"
+}
+aaa.filter(dsadsa);*/
