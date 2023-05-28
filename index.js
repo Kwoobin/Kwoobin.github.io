@@ -101,7 +101,7 @@ if(savedToDos !== null) {
 
 const images = ["0.jpg", "1.jpg", "2.jpg"];
 const chosenImage = images[Math.floor(Math.random() * images.length)];
-document.body.style.backgroundImage=`url(vanilajs/img/${chosenImage})`;
+document.body.style.backgroundImage=`url(img/${chosenImage})`;
 
 
 const API_KEY = "7aba347704cbf30687b814be932fbf75";
